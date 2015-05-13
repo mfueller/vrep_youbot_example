@@ -24,3 +24,18 @@ example
 
 start the example:
  $ ./example
+
+
+
+### PYTHON
+
+you need to add the python modules to you python path, e.g.
+
+export PYTHONPATH=$PYTHONPATH:/opt/v-rep/programming/remoteApiBindings/python/python
+
+and the shared object library to you LD_LIBRARY_PATH, e.g.
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/v-rep/programming/remoteApiBindings/lib/lib/64Bit^C
+
+
+if python do no find the module or the library, you can simply copy the files into your working directory
