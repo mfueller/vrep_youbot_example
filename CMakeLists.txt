@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 2.6) 
-project (HELLO) 
+project (V_REP_EXAMPLE) 
 
 
 #set(youbot_driver_PACKAGE_PATH "/home/matthias/workspace/youbot_driver")
@@ -32,6 +32,8 @@ include_directories (
 
 link_directories(
     ${VREP_DIR}/programming/v_repExtRemoteApi/lib
+    /opt/ros/hydro/lib
+    /opt/ros/indigo/lib
 )
 
 add_executable (example 
