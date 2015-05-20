@@ -15,6 +15,8 @@ set(CMAKE_C_FLAGS "-DNON_MATLAB_PARSING -DMAX_EXT_API_CONNECTIONS=255 -Wno-write
 INCLUDE_DIRECTORIES(
 #        ${OODL_YOUBOT_INCLUDE_DIR}
         ${Boost_INCLUDE_DIR}
+        /opt/ros/hydro/include
+        /opt/ros/indogo/include
 )
 
 
