@@ -39,3 +39,22 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/v-rep/programming/remoteApiBindings
 
 
 if python do no find the module or the library, you can simply copy the files into your working directory
+
+
+### KDL chain
+
+example code for creating the propper KDL chain
+
+KDL::Chain chain;
+double offset[5] = {d2r(-169),d2r(-65),d2r(147),d2r(-102.5),d2r(-167.5)};
+chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::None), KDL::Frame::DH(0.0, M_PI, 0.147, 0)));
+
+chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::RotZ), KDL::Frame::DH(0.033,  + M_PI_2,  0.0, offset[0] + M_PI       )));
+chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::RotZ), KDL::Frame::DH(0.155,  0,    0.000,  offset[1] - M_PI_2)));
+chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::RotZ), KDL::Frame::DH(0.135,  0,    0.000,  offset[2]    )));
+chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::RotZ), KDL::Frame::DH(0.0,  M_PI_2,       0.0,  offset[3] - M_PI_2   )));
+chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::RotZ), KDL::Frame::DH(0.0, 0,  0.0,  offset[4])));
+
+chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::None), KDL::Frame::DH(0.00, 0, -0.208, 0)));
+chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::None), KDL::Frame::DH(0.00, M_PI, 0, 0)));
+
