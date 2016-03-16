@@ -1,3 +1,4 @@
+# YouBot Example
 
 ## Set up V-REP
 1. Download and extract v-rep, e.g. into /opt/v-rep from www.v-rep.eu
