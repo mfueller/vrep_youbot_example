@@ -1,5 +1,5 @@
-cmake_minimum_required (VERSION 2.6) 
-project (V_REP_EXAMPLE) 
+cmake_minimum_required (VERSION 2.6)
+project (V_REP_EXAMPLE)
 
 
 #set(youbot_driver_PACKAGE_PATH "/home/matthias/workspace/youbot_driver")
@@ -16,7 +16,7 @@ INCLUDE_DIRECTORIES(
 #        ${OODL_YOUBOT_INCLUDE_DIR}
         ${Boost_INCLUDE_DIR}
         /opt/ros/hydro/include
-        /opt/ros/indogo/include
+        /opt/ros/indigo/include
 )
 
 
@@ -30,7 +30,7 @@ include_directories (
     ${VREP_DIR}/programming/common
     ${VREP_DIR}/programming/include
     ${VREP_DIR}/programming/remoteApi
-) 
+)
 
 link_directories(
     ${VREP_DIR}/programming/v_repExtRemoteApi/lib
@@ -38,17 +38,15 @@ link_directories(
     /opt/ros/indigo/lib
 )
 
-add_executable (example 
-    src/example.cpp 
+add_executable (example
+    src/example.cpp
     src/vrep/VRepRobotInterface.cpp
 
     ${VREP_DIR}/programming/remoteApi/extApi.c
     ${VREP_DIR}/programming/remoteApi/extApiPlatform.c
-) 
+)
 
 target_link_libraries(example v_repExtRemoteApi pthread orocos-kdl
 #        ${OODL_YOUBOT_LIBRARIES}
         ${Boost_LIBRARIES}
 )
-
-
