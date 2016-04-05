@@ -1,7 +1,7 @@
 # YouBot Example
 
 ## Set up V-REP
-1. Download and extract v-rep, e.g. into /opt/v-rep from www.v-rep.eu
+1. Download and extract v-rep, e.g. into /opt/v-rep from [www.v-rep.eu](www.v-rep.eu)
 
 2. In the v-rep directory (/opt/v-rep) check the following lines in the file *remoteApiConnections.txt*
 
@@ -14,7 +14,7 @@
 ## Run the simulation
 1. Start v-rep by `./v-rep.sh`
 
-2. Load /scence/youbot_arm
+2. Load /scene/youbot_arm
 
 3. Start the simulation
 
@@ -23,7 +23,7 @@
 ## Running your code using the remote API
 ### C++
 First compile your code:
-> $ cmake /path_to_CMakeLists.txt/ -DVREP_DIR:PATH=/path_to_v-rep/
+> $cmake /path_to_CMakeLists.txt/ -DVREP_DIR:PATH=/path_to_v-rep/
 
 In our case, for example:
 ```
@@ -33,11 +33,12 @@ $ cmake .. -DVREP_DIR:PATH=/opt/v-rep
 $ make
 ```
 
-To run the example run `$ ./example`
+To run the example use `$ ./example`
 
 ### Python
 
-1. Make sure the remote API libraries are compiled:
+1. You should make sure the remote API libraries are compiled.
+  Check [this](http://www.coppeliarobotics.com/helpFiles/en/remoteApiClientSide.htm). You will have to run something along the lines of:
   ```
   $ cd /opt/v-rep/programming/remoteApiBindings/lib
   $ make
@@ -62,7 +63,7 @@ To run your code simply use `python youbot_example.py`
 
 ### KDL chain
 
-Example code for creating the propper KDL chain
+Example code for creating the proper KDL chain
 ```cpp
 KDL::Chain chain;
 double offset[5] = {d2r(-169),d2r(-65),d2r(147),d2r(-102.5),d2r(-167.5)};
